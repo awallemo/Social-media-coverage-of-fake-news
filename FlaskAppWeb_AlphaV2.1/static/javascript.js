@@ -1,5 +1,6 @@
 //Creating global variable that stores the dictionary pulled from the Twitter API storing all of the data from the tweets.
 var allData;
+var allDates = [];
 
 //EventListener that calls the function start() when the site is loaded
 window.addEventListener('DOMContentLoaded', () => start(), false);
@@ -12,7 +13,9 @@ async function start() {
         console.log(allData);
         list = transform_data(allData);
         console.log(list);
+        created_at();
         chart(list);
+
     }, false);
 };
 
@@ -112,3 +115,13 @@ function transform_data(allData) {
     var total_list = [total_retweets, total_likes, total_quotes, total_replies]
     return total_list
 };
+
+
+function created_at() {
+
+    for (let i = 0; i < allData.length; i++) {
+        const element = allData[i]["created_at"];
+        allDates.push(element)
+        console.log()
+    }
+}
