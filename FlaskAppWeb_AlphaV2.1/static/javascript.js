@@ -38,6 +38,7 @@ function barCanvas() {
     }
 }
 
+
 // Plotting the allData in the form of a bar chart
 function chart(allData) {
     var ctx = document.getElementById('myChart').getContext('2d');
@@ -116,9 +117,37 @@ function transform_data(allData) {
     return total_list
 };
 
+//finding how many tweets was tweetet in the last 7 days.
+function findAmountOfTweets() {
+    allDates.sort()
+    var current = null;
+    var cnt = 0;
+    for (var i = 0; i < allDates.length; i++) {
+        if (allDates[i] != current) {
+            if (cnt > 0) {
+                document.write(current + ' comes --> ' + cnt + ' times<br>');
+            }
+            current = allDates[i];
+            cnt = 1;
+        } else {
+            cnt++;
+        }
+    }
+    if (cnt > 0) {
+        document.write(current + ' comes --> ' + cnt + ' times');
+    }
+
+}
+
+
+
+//plotting linechart of the tweets that were created. 
+function linechart() {
+    console.log(allDates)
+
+}
 
 function created_at() {
-
     for (let i = 0; i < allData.length; i++) {
         const element = allData[i]["created_at"];
         allDates.push(element)
