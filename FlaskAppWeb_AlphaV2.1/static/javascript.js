@@ -154,3 +154,5 @@ function created_at() {
         console.log()
     }
 }
+
+// a function call of that calls on the api
