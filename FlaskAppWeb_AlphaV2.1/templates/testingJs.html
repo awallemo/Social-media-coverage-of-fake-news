@@ -2,9 +2,13 @@
 <br>
 <br>
 <h5>Data Visualization over the last seven days</h5>
+<div id="linechartdiv">
+    <canvas id="LineChart" width = "400" height="400"></canvas>
+ </div>
 
 <button style="display: block;" class="buttons" onclick="barCanvas()">Bar-chart</button>
 <div id="barCanvas">
     <canvas id="myChart" width="400" height="400"></canvas>
 </div>
+
 {% extends 'layout.html' %}
